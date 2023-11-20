@@ -50,9 +50,12 @@ A data file of exoplanets found through the Transit method, which include fields
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Explore datasources [#1] (https://github.com/kejsi-dh/made-template/issues/1)
-2. Build a data pipeline [#2] (https://github.com/kejsi-dh/made-template/issues/2)
+1. Explore datasources [#1][i1]
+2. Build a data pipeline [#2] [i2]
 3. Build the automated tests
 4. Analyse resulting data
 5. Draw conclusion from the observations
 6. Make repository ready for submission
+
+[i1]: https://github.com/kejsi-dh/made-template/issues/1
+[i2]: https://github.com/kejsi-dh/made-template/issues/2
