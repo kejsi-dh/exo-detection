@@ -39,13 +39,20 @@ A data file of exoplanets found through the Microlensing method, which include f
 
 A data file of exoplanets found through the Direct Imaging method, which include fields such as right ascention and declination, distance, planet mass and radius (Jupiter mass), and stellar mass and age.
 
+### Datasource4: NASA Exoplanet Archive
+* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/index.html
+* Data URL: https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=TD
+* Data Type: CSV
+
+A data file of exoplanets found through the Transit method, which include fields such as right ascention and declination, distance, planet mass and radius, and stellar radius.
+
 ## Work Packages
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Explore datasources
-2. Build a data pipeline
-3. Analyse resulting data
-4. Create the appropriate graphs
+1. Explore datasources [#1] (https://github.com/kejsi-dh/made-template/issues/1)
+2. Build a data pipeline [#2] (https://github.com/kejsi-dh/made-template/issues/2)
+3. Build the automated tests
+4. Analyse resulting data
 5. Draw conclusion from the observations
 6. Make repository ready for submission
