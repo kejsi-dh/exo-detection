@@ -28,7 +28,8 @@ def dataset1() -> pd.DataFrame:
         raise FileNotFoundError("Could not load Data Source 1: Planetary Systems")
     
     file = file.iloc[:, [0,4,5,6,7,8,9,10]]
-    file.columns = ["Planet Name", "Discovery Method", "Discovery Year", "Radical Velocity", "Timing", "Transit", "Microlensing", "Imaging"]
+    file.columns = ["Planet Name", "Discovery Method", "Discovery Year", "Radical Velocity", \
+        "Timing", "Transit", "Microlensing", "Imaging"]
     
     file.replace("", np.NaN, inplace=True)
     file.dropna(how="all", inplace=True)
@@ -44,10 +45,12 @@ def d1_rv(file: pd.DataFrame) -> pd.DataFrame:
     
     file = file.query('discoverymethod == "Radical Velocity"')
     file = file.iloc[:, [0,13,14,15,16,17,18,20,21,22,24,28,29,30,31,32,35,36,37,38,39]]
-    file.columns = ["Planet Name", "Planet Radius (Earth)", "Planet Radius (Jupiter)", "Planet Mass (Earth)", "Planet Mass (Jupiter)", \
-        "Planet Density", "Eccentricity", "Inclination", "Transit Depth", "Transit Duration", "Ratio of Planet to Stellar Ratio", \
-            "Stellar Radius", "Stellar Mass", "Stellar Surface Gravity", "Stellar Age", "Stellar Density", "Right Ascention", \
-                "Declination", "Galactic Latitude", "Galactic Longitude", "Distance"]
+    file.columns = ["Planet Name", "Planet Radius (Earth)", "Planet Radius (Jupiter)", \
+        "Planet Mass (Earth)", "Planet Mass (Jupiter)", "Planet Density", "Eccentricity", \
+            "Inclination", "Transit Depth", "Transit Duration", "Ratio of Planet to Stellar Ratio", \
+            "Stellar Radius", "Stellar Mass", "Stellar Surface Gravity", "Stellar Age", \
+                "Stellar Density", "Right Ascention", "Declination", "Galactic Latitude", \
+                    "Galactic Longitude", "Distance"]
 
     file.replace("", np.NaN, inplace=True)
     file.dropna(how="all", inplace=True)
@@ -63,8 +66,9 @@ def d1_pt(file: pd.DataFrame) -> pd.DataFrame:
     
     file = file.query('discoverymethod == "Pulsar Timing"')
     file = file.iloc[:, [0,13,14,15,16,17,18,29,35,36,37,38,39]]
-    file.columns = ["Planet Name", "Planet Radius (Earth)", "Planet Radius (Jupiter)", "Planet Mass (Earth)", "Planet Mass (Jupiter)", \
-        "Planet Density", "Eccentricity", "Stellar Mass", "Right Ascention", "Declination", "Galactic Latitude", \
+    file.columns = ["Planet Name", "Planet Radius (Earth)", "Planet Radius (Jupiter)", \
+        "Planet Mass (Earth)", "Planet Mass (Jupiter)", "Planet Density", "Eccentricity", \
+            "Stellar Mass", "Right Ascention", "Declination", "Galactic Latitude", \
             "Galactic Longitude", "Distance"]
 
     file.replace("", np.NaN, inplace=True)
@@ -80,8 +84,9 @@ def dataset2() -> pd.DataFrame:
         raise FileNotFoundError("Could not load Data Source 2: Microlensing")
     
     file = file.iloc[:, [0,1,2,4,5,6,8,9,10,11,12]]
-    file.columns = ["Planet Name", "Planet Mass (Jupiter)", "Planet Mass (Earth)", "Lens Mass", "Lens Distance", \
-        "Source Distance", "Planet-Star Mass Ratio", "Right Ascention", "Declination", "Galactic Longitude", "Galactic Latitude"]
+    file.columns = ["Planet Name", "Planet Mass (Jupiter)", "Planet Mass (Earth)", "Lens Mass", \
+        "Lens Distance", "Source Distance", "Planet-Star Mass Ratio", "Right Ascention", \
+            "Declination", "Galactic Longitude", "Galactic Latitude"]
 
     file.replace("", np.NaN, inplace=True)
     file.dropna(how="all", inplace=True)
@@ -96,8 +101,9 @@ def dataset3() -> pd.DataFrame:
         raise FileNotFoundError("Could not load Data Source 3: Direct Imaging")
     
     file = file.iloc[:, [0,4,6,7,8,9,11,12,13,15,16]]
-    file.columns = ["Planet Name", "Distance", "Right Ascention", "Declination", "Galactic Longitude", "Galactic Latitude", \
-        "Stellar Mass", "Stellar Age", "Planet Mass (Jupiter)", "Planet Temperature", "Planet Radius (Jupiter)"]
+    file.columns = ["Planet Name", "Distance", "Right Ascention", "Declination", \
+        "Galactic Longitude", "Galactic Latitude", "Stellar Mass", "Stellar Age", \
+            "Planet Mass (Jupiter)", "Planet Temperature", "Planet Radius (Jupiter)"]
 
     file.replace("", np.NaN, inplace=True)
     file.dropna(how="all", inplace=True)
@@ -112,9 +118,10 @@ def dataset4() -> pd.DataFrame:
         raise FileNotFoundError("Could not load Data Source 4: Transit")
     
     file = file.iloc[:, [0,2,3,4,8,12,13,15,17,18,19,20,21,22]]
-    file.columns = ["Planet Name", "Planet Radius (Earth)", "Planet Radius (Jupiter)", "Eccentricity", "Inclination", \
-        "Transit Depth", "Transit Duration", "Ratio of Planet to Stellar Radius", "Stellar Radius", "Stellar Surface Gravity", "Right Ascention", "Declination", \
-                "Galactic Latitude", "Galactic Longitude"]
+    file.columns = ["Planet Name", "Planet Radius (Earth)", "Planet Radius (Jupiter)", \
+        "Eccentricity", "Inclination", "Transit Depth", "Transit Duration", \
+            "Ratio of Planet to Stellar Radius", "Stellar Radius", "Stellar Surface Gravity", \
+                "Right Ascention", "Declination", "Galactic Latitude", "Galactic Longitude"]
     
     file.replace("", np.NaN, inplace=True)
     file.dropna(how="all", inplace=True)
