@@ -36,14 +36,14 @@ def dataset1() -> pd.DataFrame:
     
     return file
 
-# Prepares the first dataset for planets discovered through Radical Velocity
+# Prepares the first dataset for planets discovered through Radial Velocity
 def d1_rv(file: pd.DataFrame) -> pd.DataFrame:
     file = load_data(url = url1, loads = 5)
     
     if file is None:
         raise FileNotFoundError("Could not load Data Source 1: Planetary Systems - RV")
     
-    file = file.query('discoverymethod == "Radical Velocity"')
+    file = file.query('discoverymethod == "Radial Velocity"')
     file = file.iloc[:, [0,13,14,15,16,17,18,20,21,22,24,28,29,30,31,32,35,36,37,38,39]]
     file.columns = ["Planet Name", "Planet Radius (Earth)", "Planet Radius (Jupiter)", \
         "Planet Mass (Earth)", "Planet Mass (Jupiter)", "Planet Density", "Eccentricity", \
@@ -146,8 +146,8 @@ def main():
     print("Planetary Systems Data has been successfully added to SQLite")
     
     # Add the second data frame to sqlite
-    conn = sqlite3.connect('./data/radical_velocity.sqlite')
-    ds1_rv.to_sql("Radical Velocity", conn, if_exists = "replace", index = False)
+    conn = sqlite3.connect('./data/radial_velocity.sqlite')
+    ds1_rv.to_sql("Radial Velocity", conn, if_exists = "replace", index = False)
     conn.commit()
     conn.close()
     print("Radical Velocity Data has been successfully added to SQLite")
