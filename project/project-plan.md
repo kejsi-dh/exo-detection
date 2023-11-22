@@ -19,32 +19,32 @@ These past years, there has been an increased interest in the planetary system, 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
 ### Datasource1: NASA Exoplanet Archive
-* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/index.html
+* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html
 * Data URL: https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PSCompPars
 * Data Type: CSV
 
-A composite data file of Exoplanet Systems, which include fields such as the exoplanet system name, number of stars and planets, discovery method and year, the orbital days, planet radius and mass, and stellar radius and mass.
+A composite data file of Exoplanet Systems, which includes fields such as the exoplanet system name, number of stars and planets, discovery method and year, the orbital days, planet radius and mass (Earch and Jupiter), and stellar radius and mass.
 
 ### Datasource2: NASA Exoplanet Archive
-* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/index.html
+* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/docs/API_ML.html
 * Data URL: https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=ML
 * Data Type: CSV
 
-A data file of exoplanets found through the Microlensing method, which include fields such as right ascention and declination, planet and lens mass, and Einstein crossing days.
+A data file of exoplanets found through the Microlensing method, which includes fields such as planet name, planet mass (Jupiter and Earth mass), planet-star projected semi-major axis, lens mass, lens and source distance, Einstein crossing days, planet-star mass ratio, right ascention and declination, galactic longitude and latitude, lens-source relative and microlens parallax, planet-star separation rate of change, source trajectory angle rate of change, source angular radius and crossing time, and effective timescale.
 
 ### Datasource3: NASA Exoplanet Archive
-* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/index.html
+* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/docs/API_directimaging.html
 * Data URL: https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=directimaging&constraint=immodeldef=1
 * Data Type: CSV
 
-A data file of exoplanets found through the Direct Imaging method, which include fields such as right ascention and declination, distance, planet mass and radius (Jupiter mass), and stellar mass and age.
+A data file of exoplanets found through the Direct Imaging method, which includes fields such as planet name, projected and true separation of star-planet, position angle planet-star, distance, number of stars, right ascention and declination, distance, stellar spectral type, stellar mass and age, planet mass (Jupiter mass), planet spectral type and temperature, and planet radius (Jupiter radius).
 
 ### Datasource4: NASA Exoplanet Archive
-* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/index.html
+* Metadata URL: https://exoplanetarchive.ipac.caltech.edu/docs/API_transit_detection.html
 * Data URL: https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=TD
 * Data Type: CSV
 
-A data file of exoplanets found through the Transit method, which include fields such as right ascention and declination, distance, planet mass and radius, and stellar radius.
+A data file of exoplanets found through the Transit method, which includes fields such as planet name, orbital days, planet radius (Earth and Jupiter radius), eccentricity (upper unc., lower unc., limit flag) and inclination (upper unc., lower unc., limit flag), transit depth and duration, ratio of semi-major axis to stellar radius and of planet to stellar radius, stellar effective temperature, stellar radius, stellar surface gravity, right ascention and declination, and galactic latitude and longitude.
 
 ## Work Packages
 
