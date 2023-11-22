@@ -5,13 +5,14 @@ import numpy as np
 import pandas as pd
 
 # Links to the datasources
-url1 = "/Users/Kejsi/Downloads/PSCompPars.csv"
-url2 = "/Users/Kejsi/Downloads/ML_table.csv"
-url3 = "/Users/Kejsi/Downloads/directimaging_table.csv"
-url4 = "/Users/Kejsi/Downloads/TD_table.csv"
+url1 = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname,sy_snum,sy_pnum,discoverymethod,disc_year,rv_flag,pul_flag,tran_flag,micro_flag,ima_flag,pl_orbper,pl_orbsmax,pl_rade,pl_radj,pl_bmasse,pl_bmassj,pl_dens,pl_orbeccen,pl_eqt,pl_orbincl,pl_trandep,pl_trandur,pl_ratdor,pl_ratror,pl_rvamp,st_spectype,st_teff,st_rad,st_mass,st_logg,st_age,st_dens,st_vsin,st_rotp,ra,dec,glat,glon,sy_dist+from+pscomppars&format=csv"
+url2 = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_massj,pl_masse,pl_orbsmax,st_mass,sy_dist,ml_dists,ml_xtimeein,ml_massratio,ra,dec,glon,glat,ml_plxrel,ml_dsdt,ml_radsang,ml_xtimesrc,ml_efftime+from+ML&format=csv"
+url3 = "/Users/Kejsi/Downloads/directimaging_table.csv" # No link was provided by the NASA website for this particular table; the link to viewing the table was provided under Data URL 3 in the Project Plan
+url4 = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_rade,pl_radj,pl_orbeccen,pl_orbeccenerr1,pl_orbeccenerr2,pl_orbeccenlim,pl_orbincl,pl_orbinclerr1,pl_orbinclerr2,pl_orbincllim,pl_trandep,pl_trandur,pl_ratdor,pl_ratror,st_teff,st_rad,st_logg,ra,dec,glat,glon+from+TD&format=csv"
 
 # Loads data from the csv file and returns it as a dataframe
 def load_data(url: str, loads: int = 0) -> pd.DataFrame:
+    file = None
     for _ in range(loads+1):
         try:
             file = pd.read_csv(url)
