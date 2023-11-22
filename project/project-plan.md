@@ -52,10 +52,11 @@ A data file of exoplanets found through the Transit method, which includes field
 
 1. Explore datasources [#1][i1]
 2. Build a data pipeline [#2][i2]
-3. Build the automated tests
+3. Build the automated tests [#3][i3]
 4. Analyse resulting data
 5. Draw conclusion from the observations
 6. Make repository ready for submission
 
 [i1]: https://github.com/kejsi-dh/made-template/issues/1
 [i2]: https://github.com/kejsi-dh/made-template/issues/2
+[i3]: https://github.com/kejsi-dh/made-template/issues/3
