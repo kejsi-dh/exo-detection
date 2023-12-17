@@ -12,7 +12,7 @@ url2 = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,
 # No link was provided by the NASA website for this particular table;
 # The link to viewing the interactive table was provided under:
 # Data Source 3's Data URL in the Project Plan
-url3 = os.path.expanduser("~/directimaging_table.csv")
+url3 = "https://drive.google.com/file/d/1DEhnB5PcfGD_DfBgcTVEbOIdTJUzXp7R/view?usp=share_link"
 
 url4 = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_rade,pl_radj,pl_orbeccen,pl_orbeccenerr1,pl_orbeccenerr2,pl_orbeccenlim,pl_orbincl,pl_orbinclerr1,pl_orbinclerr2,pl_orbincllim,pl_trandep,pl_trandur,pl_ratdor,pl_ratror,st_teff,st_rad,st_logg,ra,dec,glat,glon+from+TD&format=csv"
 
