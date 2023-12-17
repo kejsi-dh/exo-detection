@@ -20,7 +20,4 @@ jobs:
         with:
           python-version: 3.11
       - name: Project Feedback
-        run: |
-          cd ./project
-          chmod +x tests.sh
-          ./tests.sh
+        run: bash project/tests.sh
