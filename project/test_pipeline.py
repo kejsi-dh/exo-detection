@@ -90,26 +90,3 @@ assert len(table) == 1, "Expected tables: 1 \n Found: {} tables".format(len(tabl
 assert ('Transit',) in table, "TR table not found!"
     
 print("The test was executed without any errors!")
-    
-# Checks if the tables are in the correct format
-"""
-data1 = pipe.dataset1()
-assert isinstance(data1, pd.DataFrame), "Test failed! - PS"
-    
-data1_rv = pipe.d1_rv(data1)
-assert isinstance(data1_rv, pd.DataFrame), "Test failed! - RV"
-    
-data1_pt = pipe.d1_pt(data1)
-assert isinstance(data1_pt, pd.DataFrame), "Test failed! - PT"
-    
-data2 = pipe.dataset2()
-assert isinstance(data2, pd.DataFrame), "Test failed! - ML"
-    
-data3 = pipe.dataset3()
-assert isinstance(data3, pd.DataFrame), "Test failed! - DI"
-    
-data4 = pipe.dataset4()
-assert isinstance(data4, pd.DataFrame), "Test failed! - TR"
-    
-print("The datasets are in the correct format of Pandas DataFrame!")
-"""
