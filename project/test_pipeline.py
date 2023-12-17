@@ -89,4 +89,4 @@ conn.close()
 assert len(table) == 1, "Expected tables: 1 \n Found: {} tables".format(len(table))
 assert ('Transit',) in table, "TR table not found!"
     
-print("The test was executed successfully!")
+print("The test was executed successfully!!!")
