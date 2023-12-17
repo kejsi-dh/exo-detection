@@ -20,4 +20,4 @@ jobs:
         with:
           python-version: 3.11
       - name: Project Feedback
-        run: bash project/tests.sh
+        run: bash ./main/project/tests.sh
