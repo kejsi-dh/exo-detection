@@ -22,7 +22,7 @@ def load_data(url: str, loads: int = 0) -> pd.DataFrame:
     file = None
     for _ in range(loads+1):
         try:
-            file = pd.read_csv(url, sep = 'delimiter', header = 0)
+            file = pd.read_csv(url, header = 0, delim_whitespace = True)
             break
         except (urllib.error.HTTPError, urllib.error.URLError):
             time.sleep(5)
