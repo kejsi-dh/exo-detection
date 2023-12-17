@@ -1,4 +1,3 @@
-import os
 import urllib.error
 import sqlite3
 import time
@@ -36,9 +35,7 @@ def dataset1() -> pd.DataFrame:
     if file is None:
         raise FileNotFoundError("Could not load Data Source 1: Planetary Systems")
     
-    #file = file.iloc[:, [0,4,5,6,7,8,9,10]]
-    file = file[['pl_name', 'discoverymethod', 'disc_year', 'rv_flag', 'pul_flag', 'tran_flag', \
-        'micro_flag', 'ima_flag']]
+    file = file.iloc[:, [0,4,5,6,7,8,9,10]]
     file.columns = ["Planet Name", "Discovery Method", "Discovery Year", "Radical Velocity", \
         "Timing", "Transit", "Microlensing", "Imaging"]
     
