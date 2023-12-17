@@ -36,7 +36,7 @@ def dataset1() -> pd.DataFrame:
     if file is None:
         raise FileNotFoundError("Could not load Data Source 1: Planetary Systems")
     
-    file = file.loc[:, [0,4,5,6,7,8,9,10]]
+    file = file.iloc[:, [0,4,5,6,7,8,9,10]]
     file.columns = ["Planet Name", "Discovery Method", "Discovery Year", "Radical Velocity", \
         "Timing", "Transit", "Microlensing", "Imaging"]
     
@@ -109,7 +109,7 @@ def dataset3() -> pd.DataFrame:
     if file is None:
         raise FileNotFoundError("Could not load Data Source 3: Direct Imaging")
     
-    file = file.iloc[:, [0,4,6,7,8,9,11,12,13,15,16]]
+    file = file.loc[:, [0,4,6,7,8,9,11,12,13,15,16]]
     file.columns = ["Planet Name", "Distance", "Right Ascention", "Declination", \
         "Galactic Longitude", "Galactic Latitude", "Stellar Mass", "Stellar Age", \
             "Planet Mass (Jupiter)", "Planet Temperature", "Planet Radius (Jupiter)"]
