@@ -147,42 +147,42 @@ def main():
     ds4 = dataset4() # transit
     
     # Add the first data frame to sqlite
-    conn = sqlite3.connect('sqlite:///data/planet_systems.sqlite')
+    conn = sqlite3.connect('/data/planet_systems.sqlite')
     ds1.to_sql("Planetary Systems", conn, if_exists = "replace", index = False)
     conn.commit()
     conn.close()
     print("Planetary Systems Data has been successfully added to SQLite")
     
     # Add the second data frame to sqlite
-    conn = sqlite3.connect('sqlite:///data/radial_velocity.sqlite')
+    conn = sqlite3.connect('/data/radial_velocity.sqlite')
     ds1_rv.to_sql("Radial Velocity", conn, if_exists = "replace", index = False)
     conn.commit()
     conn.close()
     print("Radical Velocity Data has been successfully added to SQLite")
     
     # Add the third data frame to sqlite
-    conn = sqlite3.connect('sqlite:///data/pulsar_timing.sqlite')
+    conn = sqlite3.connect('/data/pulsar_timing.sqlite')
     ds1_pt.to_sql("Pulsar Timing", conn, if_exists = "replace", index = False)
     conn.commit()
     conn.close()
     print("Pulsar Timing Data has been successfully added to SQLite")
     
     # Add the fourth data frame to sqlite
-    conn = sqlite3.connect('sqlite:///data/microlensing.sqlite')
+    conn = sqlite3.connect('/data/microlensing.sqlite')
     ds2.to_sql("Microlensing", conn, if_exists = "replace", index = False)
     conn.commit()
     conn.close()
     print("Microlensing Data has been successfully added to SQLite")
     
     # Add the fifth data frame to sqlite
-    conn = sqlite3.connect('sqlite:///data/direct_imaging.sqlite')
+    conn = sqlite3.connect('/data/direct_imaging.sqlite')
     ds3.to_sql("Direct Imaging", conn, if_exists = "replace", index = False)
     conn.commit()
     conn.close()
     print("Direct Imaging Data has been successfully added to SQLite")
     
     # Add the sixth data frame to sqlite
-    conn = sqlite3.connect('sqlite:///data/transit.sqlite')
+    conn = sqlite3.connect('/data/transit.sqlite')
     ds4.to_sql("Transit", conn, if_exists = "replace", index = False)
     conn.commit()
     conn.close()
