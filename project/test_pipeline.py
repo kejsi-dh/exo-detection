@@ -15,11 +15,11 @@ cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
 table = cursor.fetchall()
 conn.close()
 
-assert ('Planetary Systems',) in table, "PS table not found!"
-assert ('Radial Velocity',) in table, "RV table not found!"
-assert ('Pulsar Timing',) in table, "PT table not found!"
-assert ('Microlensing',) in table, "ML table not found!"
-assert ('Direct Imaging',) in table, "DI table not found!"
-assert ('Transit',) in table, "TR table not found!"
+assert ('planet_systems',) in table, "PS table not found!"
+assert ('radial_velocity',) in table, "RV table not found!"
+assert ('pulsar_timing',) in table, "PT table not found!"
+assert ('microlensing',) in table, "ML table not found!"
+assert ('direct_imaging',) in table, "DI table not found!"
+assert ('transit',) in table, "TR table not found!"
     
 print("The test was executed successfully!")
