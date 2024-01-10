@@ -149,7 +149,7 @@ def main():
     ds3 = dataset3()
     ds4 = dataset4()
     
-    conn = sqlite3.connect(r'data/data.sqlite')
+    conn = sqlite3.connect(r'./project/data.sqlite')
     
     ds1.to_sql("planet_systems", conn, if_exists = "replace", index = False)
     print("Planetary Systems Data has been successfully added to SQLite")
