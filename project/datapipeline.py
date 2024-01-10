@@ -148,22 +148,22 @@ def main():
     
     conn = sqlite3.connect("data.sqlite")
     
-    ds1.to_sql("Planetary Systems", conn, if_exists = "replace", index = False)
+    ds1.to_sql("planet_systems", conn, if_exists = "replace", index = False)
     print("Planetary Systems Data has been successfully added to SQLite")
     
-    ds1_rv.to_sql("Radial Velocity", conn, if_exists = "replace", index = False)
+    ds1_rv.to_sql("radial_velocity", conn, if_exists = "replace", index = False)
     print("Radical Velocity Data has been successfully added to SQLite")
     
-    ds1_pt.to_sql("Pulsar Timing", conn, if_exists = "replace", index = False)
+    ds1_pt.to_sql("pulsar_timing", conn, if_exists = "replace", index = False)
     print("Pulsar Timing Data has been successfully added to SQLite")
     
-    ds2.to_sql("Microlensing", conn, if_exists = "replace", index = False)
+    ds2.to_sql("microlensing", conn, if_exists = "replace", index = False)
     print("Microlensing Data has been successfully added to SQLite")
     
-    ds3.to_sql("Direct Imaging", conn, if_exists = "replace", index = False)
+    ds3.to_sql("direct_imaging", conn, if_exists = "replace", index = False)
     print("Direct Imaging Data has been successfully added to SQLite")
     
-    ds4.to_sql("Transit", conn, if_exists = "replace", index = False)
+    ds4.to_sql("transit", conn, if_exists = "replace", index = False)
     print("Transit Data has been successfully added to SQLite")
     
     conn.commit()
