@@ -27,5 +27,6 @@ jobs:
           pip install numpy
           pip install pytest
           pip install sqlalchemy
+          pip install sqlite3
       - name: Project Feedback
         run: bash ./main/project/tests.sh
