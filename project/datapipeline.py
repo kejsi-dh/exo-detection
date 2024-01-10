@@ -147,6 +147,30 @@ def main():
     ds3 = dataset3()
     ds4 = dataset4()
     
+    conn = sqlite3.connect("./data/data.sqlite")
+    
+    ds1.to_sql("Planetary Systems", conn, if_exists = "replace", index = False)
+    print("Planetary Systems Data has been successfully added to SQLite")
+    
+    ds1_rv.to_sql("Radial Velocity", conn, if_exists = "replace", index = False)
+    print("Radical Velocity Data has been successfully added to SQLite")
+    
+    ds1_pt.to_sql("Pulsar Timing", conn, if_exists = "replace", index = False)
+    print("Pulsar Timing Data has been successfully added to SQLite")
+    
+    ds2.to_sql("Microlensing", conn, if_exists = "replace", index = False)
+    print("Microlensing Data has been successfully added to SQLite")
+    
+    ds3.to_sql("Direct Imaging", conn, if_exists = "replace", index = False)
+    print("Direct Imaging Data has been successfully added to SQLite")
+    
+    ds4.to_sql("Transit", conn, if_exists = "replace", index = False)
+    print("Transit Data has been successfully added to SQLite")
+    
+    conn.commit()
+    conn.close()
+    
+    """
     # Add the first data frame to sqlite
     conn = sqlite3.connect('../data/planet_systems.sqlite')
     ds1.to_sql("Planetary Systems", conn, if_exists = "replace", index = False)
@@ -188,6 +212,7 @@ def main():
     conn.commit()
     conn.close()
     print("Transit Data has been successfully added to SQLite")
+"""
 
 if __name__ == "__main__":
     main()
