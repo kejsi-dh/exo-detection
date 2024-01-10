@@ -147,8 +147,7 @@ def main():
     ds3 = dataset3()
     ds4 = dataset4()
     
-    engine = create_engine("sqlite:////data/data.sqlite")
-    conn = engine.connect()
+    conn = sqlite3.connect("sqlite:////data/data.sqlite")
     
     ds1.to_sql("planet_systems", conn, if_exists = "replace", index = False)
     print("Planetary Systems Data has been successfully added to SQLite")
