@@ -2,7 +2,7 @@ import os
 import sqlite3
 import datapipeline as pipe
 
-db_path = "data.sqlite"
+db_path = "sqlite:////data/data.sqlite"
 if os.path.exists(db_path): os.remove(db_path)
 
 pipe.main()
