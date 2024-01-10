@@ -147,8 +147,7 @@ def main():
     ds3 = dataset3()
     ds4 = dataset4()
     
-    dir = os.path.abspath("/Users/Kejsi/made-template/data")
-    conn = sqlite3.connect(os.path.join(dir, 'data.sqlite'))
+    conn = sqlite3.connect('data.sqlite')
     
     ds1.to_sql("planet_systems", conn, if_exists = "replace", index = False)
     print("Planetary Systems Data has been successfully added to SQLite")
