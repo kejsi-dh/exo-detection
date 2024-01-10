@@ -1,11 +1,9 @@
-
 import os
 import urllib.error
 import sqlite3
 import time
 import numpy as np
 import pandas as pd
-from sqlalchemy import create_engine
 
 # Links to the datasources
 url1 = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname,sy_snum,sy_pnum,discoverymethod,disc_year,rv_flag,pul_flag,tran_flag,micro_flag,ima_flag,pl_orbper,pl_orbsmax,pl_rade,pl_radj,pl_bmasse,pl_bmassj,pl_dens,pl_orbeccen,pl_eqt,pl_orbincl,pl_trandep,pl_trandur,pl_ratdor,pl_ratror,pl_rvamp,st_spectype,st_teff,st_rad,st_mass,st_logg,st_age,st_dens,st_vsin,st_rotp,ra,dec,glat,glon,sy_dist+from+pscomppars&format=csv"
@@ -149,7 +147,8 @@ def main():
     ds3 = dataset3()
     ds4 = dataset4()
     
-    conn = sqlite3.connect('data.sqlite')
+    dir = os.path.abspath("/Users/Kejsi/made-template/data")
+    conn = sqlite3.connect(os.path.join(dir, 'data.sqlite'))
     
     ds1.to_sql("planet_systems", conn, if_exists = "replace", index = False)
     print("Planetary Systems Data has been successfully added to SQLite")
