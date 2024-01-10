@@ -4,12 +4,12 @@ import sqlite3
 import datapipeline as pipe
 
 # Database paths for all tables
-db_ps = './data/planet_systems.sqlite'
-db_rv = './data/radial_velocity.sqlite'
-db_pt = './data/pulsar_timing.sqlite'
-db_ml = './data/microlensing.sqlite'
-db_di = './data/direct_imaging.sqlite'
-db_tr = './data/transit.sqlite'
+db_ps = './planet_systems.sqlite'
+db_rv = './radial_velocity.sqlite'
+db_pt = './pulsar_timing.sqlite'
+db_ml = './microlensing.sqlite'
+db_di = './direct_imaging.sqlite'
+db_tr = './transit.sqlite'
     
 # Removing the SQLite tables
 if os.path.exists(db_ps): os.remove(db_ps)
