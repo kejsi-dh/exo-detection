@@ -140,12 +140,12 @@ def dataset4() -> pd.DataFrame:
 # Main
 def main():
     print("Loading data...")
-    ds1 = dataset1() # all planetary systems
-    ds1_rv = d1_rv(ds1) # radical velocity
-    ds1_pt = d1_pt(ds1) # pulsar timing
-    ds2 = dataset2() # microlensing
-    ds3 = dataset3() # direct imaging
-    ds4 = dataset4() # transit
+    ds1 = dataset1()
+    ds1_rv = d1_rv(ds1)
+    ds1_pt = d1_pt(ds1)
+    ds2 = dataset2()
+    ds3 = dataset3()
+    ds4 = dataset4()
     
     # Add the first data frame to sqlite
     conn = sqlite3.connect('../data/planet_systems.sqlite')
