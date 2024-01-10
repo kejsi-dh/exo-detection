@@ -28,8 +28,4 @@ jobs:
           pip install pytest
           pip install sqlalchemy
       - name: Project Feedback
-        run: |
-          pwd
-          ls -la
-          chmod +x ./main/project/tests.sh
-          bash ./main/project/tests.sh
+        run: bash ./main/project/tests.sh
