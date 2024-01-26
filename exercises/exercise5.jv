@@ -1,0 +1,70 @@
+pipeline StopsPipeline {
+    block GTFSZipExtractor oftype HttpExtractor {
+        url: "https://gtfs.rhoenenergie-bus.de/GTFS.zip";
+    }
+
+    block ZipArchiveInterpreter oftype ArchiveInterpreter {
+        archiveType: "zip";
+    }
+
+    block StopsFilePicker oftype FilePicker {
+        path: "/stops.txt";
+    }
+
+    block StopsTextFileInterpreter oftype TextFileInterpreter {
+        encoding: "utf8";
+    }
+
+    block StopsCSVInterpreter oftype CSVInterpreter {
+        delimiter: ",";
+        enclosing: '"';
+    }
+
+    // Validate coordinates for longitude and latitude
+    constraint ValidGeoCoord oftype RangeConstraint {
+        lowerBound: -90;
+        lowerBoundInclusive: true;
+        upperBound: 90;
+        upperBoundInclusive: true;
+    }
+
+    valuetype GeoCoordinations oftype decimal {
+        constraints: [ValidGeoCoord];
+    }
+
+    // Filter stops to keep only zone 2001
+    constraint ValidZone oftype RangeConstraint {
+        lowerBound: 2001;
+        lowerBoundInclusive: true;
+        upperBound: 2001;
+        upperBoundInclusive: true;
+    }
+
+    valuetype Zone2001 oftype integer {
+        constraints: [ValidZone];
+    }
+
+    block StopsTableInterpreter oftype TableInterpreter {
+        header: true;
+        columns: [
+            "stop_id" oftype integer,
+            "stop_name" oftype text,
+            "stop_lat" oftype GeoCoordinations,
+            "stop_lon" oftype GeoCoordinations,
+            "zone_id" oftype Zone2001,
+        ];
+    }
+
+    block StopsSQLiteLoader oftype SQLiteLoader {
+        table: "stops";
+        file: "./gtfs.sqlite";
+    }
+
+    GTFSZipExtractor
+        ->ZipArchiveInterpreter
+        ->StopsFilePicker
+        ->StopsTextFileInterpreter
+        ->StopsCSVInterpreter
+        ->StopsTableInterpreter
+        ->StopsSQLiteLoader;
+}
